@@ -5,6 +5,7 @@ using UnityEngine;
  public class Boss
 {
     private int hp = 100; // hit point
+    private int mp = 53; // magic point
     private int power = 25; // attack skill
 
     public void Attack()
@@ -16,6 +17,19 @@ using UnityEngine;
     {
         Debug.Log(damage + "damage happended!!");
         this.hp -= damage;
+    }
+
+    public void Magic(int ConsumedMp)
+    {
+        if(mp>=5)
+        {
+            this.mp -= 5;
+            Debug.Log("You did a Magical attack! Current MP is {mp}");
+        }
+        else
+        {
+            Debug.Log("You cannot use Magic because your MP is not enough!");
+        }
     }
 }
 
